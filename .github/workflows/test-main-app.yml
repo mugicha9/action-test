@@ -19,7 +19,7 @@ jobs:
           ruff: true
   deploy:
     needs: streamlit
-    permissons:
+    permissions:
       pages: write
       id-token: write
     environment:
