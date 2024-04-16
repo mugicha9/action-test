@@ -1,0 +1,19 @@
+name: Streamlit app
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  streamlit:
+    rus-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - uses: streamlit/streamlit-app-action@v0.0.3
+        with:
+          app-path: main.py
+          ruff: true
