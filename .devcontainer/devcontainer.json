@@ -1,5 +1,6 @@
 {
     "name": "devcontainer-Python 3",
+    "dockerFile": "../Dockerfile",
     "containerEnv": {
         "TZ": "Asia/Tokyo"
     },
@@ -13,7 +14,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
                 // for sharing extensions, simply add them here
             ]
         }
