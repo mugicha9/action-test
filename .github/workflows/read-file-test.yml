@@ -16,8 +16,8 @@ jobs:
         id: read_file
         run: |
           file_content=`cat ./main.py`
-          echo "::set-output CONTENT=${file_content}"
-          
+          echo "::set-output name=CONTENT::${file_content}"
+
       - name: Echo read 
         env:
           CONTENT: ${{steps.read_file.outputs.CONTENT}}
