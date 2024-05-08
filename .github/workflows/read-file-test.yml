@@ -15,12 +15,13 @@ jobs:
       - name: Read file
         id: read_file
         run: |
-          file_content=`cat ./main.py`
-          echo "::set-output name=CONTENT::${file_content}"
+          {
+            echo 'CONTENT<<EOF'
+            cat ./main.py
+            echo EOF
+          } >> "$GITHUB_ENV"
 
       - name: Echo read 
-        env:
-          CONTENT: ${{steps.read_file.outputs.CONTENT}}
         run: |
           echo "Contents: $CONTENT"
 
