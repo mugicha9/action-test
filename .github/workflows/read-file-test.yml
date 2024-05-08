@@ -16,7 +16,7 @@ jobs:
         id: read_file
         run: |
           file_content=`cat ./main.py`
-          echo "CONTENT=${file_content}" >> "$GITHUB_ENV"
+          echo "CONTENT=${file_content}" >> $GITHUB_ENV
 
       - name: Echo read 
         run: |
