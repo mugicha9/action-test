@@ -17,7 +17,7 @@ jobs:
         run: |
           {
             echo 'CONTENT<<EOF'
-            cat ./main.py | echo
+            cat ./main.py
             echo EOF
           } >> "$GITHUB_ENV"
 
