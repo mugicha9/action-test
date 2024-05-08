@@ -15,12 +15,10 @@ jobs:
       - name: Read file
         id: read_file
         run: |
-          content=`cat ./main.py`
-          echo "file_content=${content}" >> "$GITHUB_OUTPUT"
+          file_content=`cat ./main.py`
+          echo "CONTENT=${file_content}" >> "$GITHUB_ENV"
 
       - name: Echo read 
-        env: 
-          CONTENT: ${{steps.read_file.outputs.file_content}}
         run: |
           echo "Contents: $CONTENT"
 
