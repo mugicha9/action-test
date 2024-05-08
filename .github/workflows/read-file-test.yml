@@ -16,8 +16,8 @@ jobs:
         id: read_file
         run: |
           file_content=`cat ./main.py`
-          echo "CONTENT=${file_content}" >> "$GITHUB_OUTPUT"
-
+          echo "::set-output CONTENT=${file_content}"
+          
       - name: Echo read 
         env:
           CONTENT: ${{steps.read_file.outputs.CONTENT}}
