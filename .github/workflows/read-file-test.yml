@@ -1,0 +1,29 @@
+name: read file test
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Read file
+        id: read_file
+        run: |
+          content=`cat ./main.py`
+          echo "::set-output name=file_content::$content"
+      - name: Echo read 
+        env: CONTENT: ${{steps.read_file.outputs.file_content}}
+        run: |
+          echo "Contents: $CONTENT"
+
+      - name: Echo secret
+        with:
+          sec_token: ${{secret.TEST_SECRET_TOKEN}}
+        run: |
+          echo "Token: $sec_token"
