@@ -16,7 +16,7 @@ jobs:
         id: read_file
         run: |
           content=`cat ./main.py`
-          echo "::set-output name=file_content::$content"
+          echo "file_content=${content}" >> "$GITHUB_OUTPUT"
 
       - name: Echo read 
         env: 
