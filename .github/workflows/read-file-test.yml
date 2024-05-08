@@ -25,6 +25,6 @@ jobs:
 
       - name: Echo secret
         with:
-          sec_token: ${{secret.TEST_SECRET_TOKEN}}
+          sec_token: ${{secrets.TEST_SECRET_TOKEN}}
         run: |
           echo "Token: $sec_token"
