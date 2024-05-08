@@ -15,7 +15,7 @@ jobs:
       - name: Read file
         id: read_file
         run: |
-          file_content='cat ./main.py'
+          file_content=`cat ./main.py`
           {
             echo 'CONTENT<<EOF'
             echo "$file_content"
