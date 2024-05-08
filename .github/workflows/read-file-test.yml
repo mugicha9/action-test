@@ -15,9 +15,10 @@ jobs:
       - name: Read file
         id: read_file
         run: |
+          file_content='cat ./main.py'
           {
             echo 'CONTENT<<EOF'
-            cat ./main.py
+            echo "$file_content"
             echo EOF
           } >> "$GITHUB_ENV"
 
