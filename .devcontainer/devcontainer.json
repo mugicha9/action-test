@@ -1,0 +1,22 @@
+{
+    "name": "devcontainer-Python 3",
+    "dockerFile": "../Dockerfile",
+    "containerEnv": {
+        "TZ": "Asia/Tokyo"
+    },
+    "runArgs": ["--init"],
+
+    "features": {
+        "ghcr.io/schlich/devcontainer-features/rye:1.2.2": {}
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                // for sharing extensions, simply add them here
+            ]
+        }
+    },
+}
