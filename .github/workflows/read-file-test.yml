@@ -17,6 +17,7 @@ jobs:
         run: |
           content=`cat ./main.py`
           echo "::set-output name=file_content::$content"
+
       - name: Echo read 
         env: 
           CONTENT: ${{steps.read_file.outputs.file_content}}
@@ -24,7 +25,5 @@ jobs:
           echo "Contents: $CONTENT"
 
       - name: Echo secret
-        with:
-          sec_token: ${{secrets.TEST_SECRET_TOKEN}}
         run: |
-          echo "Token: $sec_token"
+          echo "Token: ${{secrets.TEST_SECRET_TOKEN}}"
